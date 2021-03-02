@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: whitesmoke;
+  color: #454444;
 }
 
 .cinque-nav {
@@ -25,10 +27,25 @@
   color: inherit;
 }
 
-main {
-  /* padding-top: 60px; */
+.is-current {
+  color: white;
+  font-weight: 800;
 }
 
 .cat-name {
-  padding-top: 60px;
+  padding-top: 55px;
+}
+
+.cat-section {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+footer {
+  height: 80px;
+  margin-top: 40px;
+  background-color: darkslateblue;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
 }
