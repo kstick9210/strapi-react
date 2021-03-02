@@ -1,7 +1,12 @@
 import logo from './logo.png';
 import './App.css';
+import axios from 'axios'
 
 function App() {
+
+  axios.get('http://localhost:1337/restaurants')
+  .then(response => {console.log(response)})
+
   return (
     <div className="App">
       <header className="App-header">
