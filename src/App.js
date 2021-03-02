@@ -3,6 +3,7 @@ import axios from 'axios';
 import Scrollspy from 'react-scrollspy'
 
 import './App.css';
+import logo from './assets/logo.png'
 
 function App() {
   const [categories, setCategories] = useState("");
@@ -21,18 +22,22 @@ function App() {
     <div className="App">
       {categories ? (
         <>
-          <Scrollspy
-            className="cinque-nav"
-            items={ categories.map(c => c.name) }
-            currentClassName="is-current"
-            offset={-50}
-          >
-            {categories.map(category => (
-              <li key={category.id} className="nav-item">
-                <a href={`#${category.name}`}>{category.name}</a>
-              </li>
-            ))}
-          </Scrollspy>
+          <nav>
+            <img src={logo} className="logo" alt="knife spoon fork"/>
+
+            <Scrollspy
+              className="cinque-nav"
+              items={ categories.map(c => c.name) }
+              currentClassName="is-current"
+              offset={-50}
+            >
+              {categories.map(category => (
+                <li key={category.id} className="nav-item">
+                  <a href={`#${category.name}`}>{category.name}</a>
+                </li>
+              ))}
+            </Scrollspy>
+          </nav>
         
           <main>
             {categories.map(category => (

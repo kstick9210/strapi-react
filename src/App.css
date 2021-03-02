@@ -4,6 +4,16 @@
   color: #454444;
 }
 
+.logo {
+  height: 48px;
+  position: fixed;
+  z-index: 1;
+}
+
+nav {
+  display: flex;
+}
+
 .cinque-nav {
   display: flex;
   justify-content: space-evenly;
