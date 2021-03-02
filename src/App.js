@@ -1,25 +1,33 @@
-import logo from './logo.png';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-import axios from 'axios'
+import axios from 'axios';
 
 function App() {
+  const [categories, setCategories] = useState("");
 
-  axios.get('http://localhost:1337/restaurants')
-  .then(response => {console.log(response)})
+  const getCategories = () => {
+    axios.get('http://localhost:1337/categories')
+    .then(response => {setCategories(response.data)})
+
+    console.log(categories)
+    
+  } 
+
+  useEffect(() => {
+    getCategories()
+  }, [])
+
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://www.cinquewd.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Visit Cinque Web Development
-        </a>
-      </header>
+      {categories ? (
+        <>
+          {categories.map(category => <h1>{category.name}</h1>)}
+        </>
+      ) : (
+        <h2>Lodaing...</h2>
+      )
+    }
     </div>
   );
 }
