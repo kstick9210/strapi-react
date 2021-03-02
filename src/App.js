@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Scrollspy from 'react-scrollspy'
 
 import './App.css';
 
@@ -23,18 +24,18 @@ function App() {
     <div className="App">
       {categories ? (
         <>
-          <nav
+          <Scrollspy
             className="cinque-nav"
-            // items={ categories.map(c => c.name) }
-            // currentClassName="is-current"
-            // offset={100}
+            items={ categories.map(c => c.name) }
+            currentClassName="is-current"
+            offset={100}
           >
             {categories.map(category => (
               <li key={category.id} className="nav-item">
                 <a href={`#${category.name}`}>{category.name}</a>
               </li>
             ))}
-          </nav>
+          </Scrollspy>
         
           <main>
             {categories.map(category => (
